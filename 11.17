@@ -1,0 +1,47 @@
+package perfectsquarequiz;                
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PerfectSquareQuiz {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n;
+		int M,m;
+		Scanner input =new  Scanner(System.in);
+		System.out.print("Enter a integer m :");
+        m = input.nextInt();
+        M = m;
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i = 2; m > 1; i++) {
+        	if (m%i == 0)      {
+        		list.add(i);
+        		System.out.println(i);
+        		m = m/i;
+        		i = 1;
+        	}
+        }
+        n = countNumbers(list);
+        System.out.println("The smallest number n for m * n to be a perfect square is " + n + " m * n is " + M*n);
+	}
+	
+	public static int countNumbers(ArrayList<Integer> list) {
+		int mul = 1;
+		ArrayList<Integer> List = new ArrayList<Integer>();
+		for (int i = 0; i < list.size(); i++) {
+			for (int j = i+1; j < list.size(); j++) {
+				if (list.get(i) == list.get(j)) {
+					list.remove(j);
+					list.remove(i);
+					j--;
+				}
+				else {
+					continue;
+				}
+			}
+		}
+		return mul;
+	}
+
+}
