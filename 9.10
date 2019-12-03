@@ -1,4 +1,5 @@
 
+
 public class TestPassObject {
 
 	public static void main(String[] args) {
@@ -13,9 +14,10 @@ public class TestPassObject {
 		//See myCircle.radius and times
 		System.out.println("\n" + "Radius is " + myCircle.getRadius());
 		System.out.println("n is " + n);
-		
+	}	
 		//Print a table of areas for radius
-		public static void printAreas(CircleWithPrivateDataFields c, int times) {
+		public static void printAreas(
+				CircleWithPrivateDataFields c, int times) {
 			System.out.println("Radius \t\tArea");
 			while (times >= 1) {
 				System.out.println(c.getRadius() + "\t\t" +c.getArea());
@@ -28,6 +30,7 @@ public class TestPassObject {
 
 	}
 
+
 	
 
-}
+
