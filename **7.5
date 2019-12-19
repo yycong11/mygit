@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class PrintNumbers {
+	public static void main(String[] args) {
+	    System.out.print("Enter ten numbers：");
+	    int[] inputNumList = inputNumList();
+	    //System.out.println("当前的数组为：" + Arrays.toString(inputNumList));
+	    resultNumList(inputNumList);
+	}
+	 
+	private static int[] inputNumList() {
+	    Scanner scanner = new Scanner(System.in);
+	    int[] inputNumList = new int[10];
+	    for (int i = 0; i < 10; i++) {
+	        inputNumList[i] = scanner.nextInt();
+	    }
+	    return inputNumList;
+	}
+	 
+	private static void resultNumList(int[] inputNumList) {
+	    int counts = 0;
+	    ArrayList<Integer> resultNumList = new ArrayList<>();
+	    for (int i = 0; i < 10; i++) {
+	        for (int j = i; j < 10; j++) {
+	            if (inputNumList[i] == inputNumList[j] && i != j) {
+	                inputNumList[j] = -1;
+	            }
+	        }
+	        if (inputNumList[i] != -1) {
+	            counts++;
+	            resultNumList.add(inputNumList[i]);
+	        }
+	    }
+	    System.out.println("The number of distinct number is ：" + counts);
+	    System.out.print("The distinct numbers are : " + Arrays.toString(resultNumList.toArray()));
+	}
+
+
+}
